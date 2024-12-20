@@ -1,0 +1,146 @@
+/* HeroSection.module.css */
+.heroSection {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+/* Canvas for background animation */
+.canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Makes sure the canvas doesn't block interactions */
+  z-index: -1; /* Ensures the canvas stays in the background */
+}
+
+/* Content container with flexible layout */
+.content {
+  color: white;
+  background-color: none;
+  position: relative;
+  z-index: 10; /* Ensures content is on top of the canvas */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;  /* Adjust width to be 100% on all screen sizes */
+  padding: 0 20px; /* Add padding to prevent text from touching the edges */
+  box-sizing: border-box; /* Ensure padding does not cause overflow */
+}
+
+.title {
+  background-color: rgb(0, 0, 0);
+  color: white;
+  background-color: none;
+  position: relative;
+  z-index: 10;
+  padding: 0 20px;
+  font-size: 60px;
+  margin-inline: auto;
+  text-align: center;
+  display: inline-block;
+}
+
+.description {
+  color: white;
+  background-color: none;
+  position: relative;
+  z-index: 10;
+  padding: 0 20px;
+  font-size: 25px;
+  margin-inline: auto;
+  text-align: center;
+  display: inline-block;
+}
+
+.bulletpoint {
+  color: black;
+}
+
+.highlight {
+  background: linear-gradient(90deg, rgb(255, 254, 182), rgb(255, 100, 182));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Button styling */
+.button {
+  padding: 15px 30px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #363636; /* Black background */
+  color: white;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.3s ease;
+}
+
+/* Button underline styling */
+.button::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background-color: rgb(0, 0, 0); /* White underline */
+  transform: scaleX(0); /* Initially hide the underline */
+  transform-origin: bottom right;
+  transition: transform 0.1s ease-out;
+  z-index: 0;
+}
+
+/* Hover effect for button */
+.button:hover {
+  color: rgb(255, 255, 255); /* Change text color on hover */
+}
+
+/* Animate the underline when hovering */
+.button:hover::after {
+  transform: scaleX(1); /* Show the underline from left to right */
+  transform-origin: bottom left; /* Start from the left side */
+}
+
+.button:active {
+  transform: scale(0.90);
+  background-color: #333333;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  /* Adjustments for tablets and smaller screens */
+  .content {
+      width: 100%;
+      padding: 0 10px; /* Add smaller padding on smaller devices */
+      text-align: center; /* Center text for better readability */
+  }
+
+  .button {
+      padding: 12px 24px;
+      font-size: 14px; /* Smaller font size for better fit */
+  }
+
+  .description {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Adjustments for small devices (e.g., phones) */
+  .content {
+      width: 100%;
+      padding: 0 10px;
+      text-align: center;
+  }
+
+  .button {
+      padding: 10px 20px;
+      font-size: 14px;
+  }
+}
