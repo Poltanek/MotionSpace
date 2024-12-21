@@ -117,9 +117,7 @@ const HeroSection = ({ children }) => {
       <div className={styles.content}>
         {children}
         <h2 className={styles.title}>My name is <span className={styles.highlight}>Adam Tanweer<span className={styles.bulletpoint}>.</span></span></h2>        
-        <p className={styles.description}> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate culpa 
-          iusto dignissimos minima pariatur eaque aliquid doloremque! Iure accusantium aut odit quia,
-          consequatur aliquam possimus quibusdam, ratione neque placeat temporibus.</p>
+        <p className={styles.description}>University student with an interest in Software Engineering</p>
         <button className={styles.button}>Find out more!</button>
       </div>
     </div>
