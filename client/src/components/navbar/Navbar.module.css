@@ -7,6 +7,8 @@
     z-index: 100;
     background-color: transparent;
     transition: opacity 0.3s ease, visibility 0.3s ease;
+    padding: 10px;
+    background-color: black;
 }
 
 .header.hidden {
@@ -20,6 +22,49 @@
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
     transition: 0.3s;
 }
+
+.navbar {
+  position: fixed;
+  top: 0;
+  right: -100%; /* Hide off-screen initially */
+  height: 100vh;
+  width: 100vw; /* Width of the menu */
+  background-color: rgb(0, 0, 0); /* Background color for menu */
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: right 0.3s ease-in-out; /* Smooth transition */
+  z-index: 99;
+}
+
+.navbar.active {
+  right: 0; /* Slide in when active */
+}
+
+.navList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.navList li {
+  margin: 20px 0; /* Space between menu items */
+}
+
+.navList li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+  transition: color 0.2s;
+}
+
+.navList li a:hover {
+  color: gray; /* Change color on hover */
+}
+
 
 .container {
     width: 100%;
@@ -35,9 +80,10 @@
 
 .hamburger {
     position: absolute;
-    right: 20px; /* Adjust as needed to position it from the right edge */
+    right: 40px; /* Adjust as needed to position it from the right edge */
     top: 50%; /* Align vertically to the center */
     transform: translateY(-50%); /* Adjust vertically to perfectly center it */
+    z-index: 100;
   }
   
   .headline {
@@ -46,11 +92,12 @@
     left: 50%;               /* Horizontally center */
     transform: translate(-50%, -50%);  /* Offset the 50% to perfectly center */
     color: white;
-    font-size: medium;       /* You can adjust this value as needed */
+    font-size: 28px;       /* You can adjust this value as needed */
     text-align: center;      /* Center text horizontally */
     width: 100%;             /* Ensures the headline stays responsive */
     box-sizing: border-box;  /* Prevents overflow */
     padding: 0 20px;         /* Adjust for padding on smaller screens */
+    font: bold;
   }
   
   /* Responsive adjustments */
@@ -68,9 +115,8 @@
   
   .logo {
     position: absolute;
-    left: 20px; /* Adjust the distance from the left side */
-    top: 50%;
-    transform: translateY(-50%); /* Center the logo vertically */
-    width: 50px; /* Adjust the logo size */
-    height: auto; /* Keep aspect ratio */
+    color: white;
+    font-size: 15px;
+    background-color: black;
+    
   }

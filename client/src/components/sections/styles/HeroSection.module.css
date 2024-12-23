@@ -33,7 +33,7 @@
 }
 
 .title {
-  background-color: rgb(0, 0, 0);
+  background-color: transparent;
   color: white;
   background-color: none;
   position: relative;
@@ -62,7 +62,7 @@
 }
 
 .highlight {
-  background: linear-gradient(90deg, rgb(255, 254, 182), rgb(255, 100, 182));
+  background: linear-gradient(90deg, rgb(156, 156, 156), rgb(0, 0, 0));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

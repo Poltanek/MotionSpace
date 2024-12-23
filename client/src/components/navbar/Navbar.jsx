@@ -5,7 +5,7 @@ import { Spin as Hamburger } from 'hamburger-react';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
-    const [isHidden, setIsHidden] = useState(false); // Track header visibility
+    const [isHidden, setIsHidden] = useState(false);
     let lastScrollPosition = 0;
 
     useEffect(() => {
@@ -13,11 +13,11 @@ const Navbar = () => {
             const currentScrollPosition = window.scrollY;
 
             if (currentScrollPosition === 0) {
-                // When at the very top, always show the header
-                setIsHidden(false);
+                setIsHidden(false); // Show header at the top
             } else if (currentScrollPosition > lastScrollPosition) {
-                // Scrolling down, hide the header
-                setIsHidden(true);
+                setIsHidden(true); // Hide header when scrolling down
+            } else {
+                setIsHidden(false); // Show header when scrolling up
             }
             lastScrollPosition = currentScrollPosition;
         };
@@ -30,29 +30,40 @@ const Navbar = () => {
     }, []);
 
     const toggleNavbar = () => {
-        setIsOpen(!isOpen);
+        setIsOpen(!isOpen); // Toggle open/close state when hamburger is clicked
+    };
+
+    const closeNavbar = () => {
+        setIsOpen(false); // Close the menu when a link is clicked
     };
 
     return (
         <header
             className={`${styles.header} ${isHidden ? styles.hidden : ''}`}
         >
+            {/* Logo */}
+            <a href="/" className={styles.logo}>Adam Tanweer</a>
+            {/* Headline */}
+            <div className={styles.headline}>Portfolio</div>
+            {/* Navbar Container */}
             <div className={styles.container}>
-                <a href="/" className={styles.logo}>ADAM TANWEER</a>
-                <div className={styles.headline}>PORTFOLIO</div>
+                {/* Hamburger Icon */}
                 <div className={styles.hamburger}>
                     <Hamburger
                         color="rgb(255, 255, 255)"
                         toggled={isOpen}
-                        toggle={toggleNavbar}
+                        toggle={toggleNavbar} // Toggles isOpen state
                     />
                 </div>
+                {/* Navbar Menu */}
                 <nav
-                    className={`${styles.navbar} ${
-                        isOpen ? styles.active : ''
-                    }`}
+                    className={`${styles.navbar} ${isOpen ? styles.active : ''}`}
                 >
                     <ul className={styles.navList}>
+                        <li><Link to="/" onClick={closeNavbar}>Home</Link></li>
+                        <li><Link to="/about" onClick={closeNavbar}>About</Link></li>
+                        <li><Link to="/projects" onClick={closeNavbar}>Projects</Link></li>
+                        <li><Link to="/contact" onClick={closeNavbar}>Contact</Link></li>
                     </ul>
                 </nav>
             </div>
