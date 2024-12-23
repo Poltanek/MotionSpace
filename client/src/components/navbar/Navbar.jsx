@@ -38,7 +38,8 @@ const Navbar = () => {
             className={`${styles.header} ${isHidden ? styles.hidden : ''}`}
         >
             <div className={styles.container}>
-                <a href="/" className={styles.logo}></a>
+                <a href="/" className={styles.logo}>ADAM TANWEER</a>
+                <div className={styles.headline}>PORTFOLIO</div>
                 <div className={styles.hamburger}>
                     <Hamburger
                         color="rgb(255, 255, 255)"
@@ -52,11 +53,6 @@ const Navbar = () => {
                     }`}
                 >
                     <ul className={styles.navList}>
-                        <li className={styles.navItem}>
-                            <Link to="/" className={styles.link}>
-                                ABOUT ME
-                            </Link>
-                        </li>
                     </ul>
                 </nav>
             </div>

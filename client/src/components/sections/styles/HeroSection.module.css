@@ -68,6 +68,7 @@
 }
 
 /* Button styling */
+/* Button styling */
 .button {
   padding: 15px 30px;
   font-size: 16px;
@@ -78,39 +79,19 @@
   cursor: pointer;
   position: relative;
   overflow: hidden;
-  transition: color 0.3s ease;
-}
-
-/* Button underline styling */
-.button::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 50px;
-  background-color: rgb(0, 0, 0); /* White underline */
-  transform: scaleX(0); /* Initially hide the underline */
-  transform-origin: bottom right;
-  transition: transform 0.1s ease-out;
-  z-index: 0;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 /* Hover effect for button */
 .button:hover {
-  color: rgb(255, 255, 255); /* Change text color on hover */
-}
-
-/* Animate the underline when hovering */
-.button:hover::after {
-  transform: scaleX(1); /* Show the underline from left to right */
-  transform-origin: bottom left; /* Start from the left side */
+  background-color: #444444; /* Slightly lighter black on hover */
 }
 
 .button:active {
-  transform: scale(0.90);
-  background-color: #333333;
+  transform: scale(0.90); /* Slight shrink effect on click */
+  background-color: #333333; /* Darker background on active state */
 }
+
 
 /* Responsive adjustments */
 @media (max-width: 768px) {

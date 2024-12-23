@@ -5,7 +5,7 @@
     top: 0;
     left: 0;
     z-index: 100;
-    background-color: red;
+    background-color: transparent;
     transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
@@ -30,5 +30,47 @@
     display: flex;
     justify-content: space-between; 
     align-items: center;
-    background-color: green;
+    background-color: transparent;
 }
+
+.hamburger {
+    position: absolute;
+    right: 20px; /* Adjust as needed to position it from the right edge */
+    top: 50%; /* Align vertically to the center */
+    transform: translateY(-50%); /* Adjust vertically to perfectly center it */
+  }
+  
+  .headline {
+    position: absolute;
+    top: 50%;                /* Vertically center */
+    left: 50%;               /* Horizontally center */
+    transform: translate(-50%, -50%);  /* Offset the 50% to perfectly center */
+    color: white;
+    font-size: medium;       /* You can adjust this value as needed */
+    text-align: center;      /* Center text horizontally */
+    width: 100%;             /* Ensures the headline stays responsive */
+    box-sizing: border-box;  /* Prevents overflow */
+    padding: 0 20px;         /* Adjust for padding on smaller screens */
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .headline {
+      font-size: 1.5rem;  /* Adjust font size for tablets */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .headline {
+      font-size: 1.2rem;  /* Adjust font size for smaller screens (e.g., phones) */
+    }
+  }
+  
+  .logo {
+    position: absolute;
+    left: 20px; /* Adjust the distance from the left side */
+    top: 50%;
+    transform: translateY(-50%); /* Center the logo vertically */
+    width: 50px; /* Adjust the logo size */
+    height: auto; /* Keep aspect ratio */
+  }
