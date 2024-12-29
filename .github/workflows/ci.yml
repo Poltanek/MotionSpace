@@ -1,39 +1,43 @@
-name: CI
+name: Deploy to Netlify
 
 on:
   push:
     branches:
-      - main
+      - main  # Change this if your deployment branch is different
   pull_request:
     branches:
-      - main
+      - main  # Same here, if deploying from a pull request
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
-    # Step 1: Checkout the repository
-    - name: Checkout repository
-      uses: actions/checkout@v3
+      # Step 1: Checkout repository
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-    # Step 2: Set up Node.js (using version 18)
-    - name: Set up Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '18'
+      # Step 2: Set up Node.js (use the version your project needs, like 18)
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
 
-    # Step 3: Install dependencies in the client folder
-    - name: Install dependencies
-      working-directory: ./client
-      run: npm install
+      # Step 3: Install dependencies in the client folder
+      - name: Install dependencies
+        working-directory: ./client  # Modify this if your project is in a different directory
+        run: npm install
 
-    # Step 4: Run tests in the client folder
-    - name: Run tests
-      working-directory: ./client
-      run: npm test
+      # Step 4: Build the project
+      - name: Build project
+        working-directory: ./client  # Modify if needed
+        run: npm run build
 
-    # Step 5: Build the React app
-    - name: Build project
-      working-directory: ./client
-      run: npm run build
+      # Step 5: Install Netlify CLI
+      - name: Install Netlify CLI
+        run: npm install -g netlify-cli
+
+      # Step 6: Deploy to Netlify
+      - name: Deploy to Netlify
+        run: |
+          netlify deploy --prod --dir=./client/dist --auth nfp_uUeVZWd23rfwyLVnV3z4shuzW6jUghxRe504 --site ee11dd7e-a239-43b5-ac17-1dcc93d5e98d
