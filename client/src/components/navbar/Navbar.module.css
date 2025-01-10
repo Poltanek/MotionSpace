@@ -88,28 +88,28 @@
   
   .headline {
     position: absolute;
-    top: 50%;                /* Vertically center */
-    left: 50%;               /* Horizontally center */
-    transform: translate(-50%, -50%);  /* Offset the 50% to perfectly center */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
     color: white;
-    font-size: 28px;       /* You can adjust this value as needed */
-    text-align: center;      /* Center text horizontally */
-    width: 100%;             /* Ensures the headline stays responsive */
-    box-sizing: border-box;  /* Prevents overflow */
-    padding: 0 20px;         /* Adjust for padding on smaller screens */
+    font-size: 28px;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 20px;       
     font: bold;
   }
   
   /* Responsive adjustments */
   @media (max-width: 768px) {
     .headline {
-      font-size: 1.5rem;  /* Adjust font size for tablets */
+      font-size: 1.5rem;
     }
   }
   
   @media (max-width: 480px) {
     .headline {
-      font-size: 1.2rem;  /* Adjust font size for smaller screens (e.g., phones) */
+      font-size: 1.2rem;
     }
   }
   

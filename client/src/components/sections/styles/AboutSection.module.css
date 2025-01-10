@@ -10,7 +10,7 @@
   box-sizing: border-box; /* Include padding in height calculation */
   height: 100vh; /* Fill the entire viewport height */
   margin: 0; /* Remove any default margin */
-  background-color: black;
+  background-color: transparent;
 }
 
 /* Content wrapper to limit width */
