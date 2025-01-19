@@ -1,3 +1,5 @@
+
+
 .header {
     background: transparent;
     width: 100%;
@@ -8,7 +10,6 @@
     background-color: transparent;
     transition: opacity 0.3s ease, visibility 0.3s ease;
     padding: 10px;
-    background-color: black;
 }
 
 .header.hidden {
@@ -117,6 +118,5 @@
     position: absolute;
     color: white;
     font-size: 15px;
-    background-color: black;
-    
+    background-color: transparent;
   }

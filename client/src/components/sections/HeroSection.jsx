@@ -116,9 +116,12 @@ const HeroSection = ({ children }) => {
       {/* Foreground content */}
       <div className={styles.content}>
         {children}
-        <h2 className={styles.title}>My name is <span className={styles.highlight}>Adam Tanweer<span className={styles.bulletpoint}>.</span></span></h2>        
-        <p className={styles.description}>Current Computer Science Student specializing in Software Engineering at University of Winchester</p>
-        <button className={styles.button}>Find out more!</button>
+        <h2 className={styles.title}><span className={styles.highlight}>MotionSpace<span className={styles.bulletpoint}>.</span></span></h2>        
+        <p className={styles.description}>Hover your cursor near the bubbles!</p>
+        <button 
+          className={styles.button}
+          onClick={() => window.open("https://github.com/Poltanek/Portfolio-Website", "_blank")}
+          >Github Repository</button>
       </div>
     </div>
   );

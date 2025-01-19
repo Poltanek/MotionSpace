@@ -12,7 +12,7 @@ const Navbar = () => {
         const handleScroll = () => {
             const currentScrollPosition = window.scrollY;
 
-            if (currentScrollPosition === 0) {
+            if (currentScrollPosition === 0) {s
                 setIsHidden(false); // Show header at the top
             } else if (currentScrollPosition > lastScrollPosition) {
                 setIsHidden(true); // Hide header when scrolling down
@@ -61,9 +61,6 @@ const Navbar = () => {
                 >
                     <ul className={styles.navList}>
                         <li><Link to="/" onClick={closeNavbar}>Home</Link></li>
-                        <li><Link to="/about" onClick={closeNavbar}>About</Link></li>
-                        <li><Link to="/projects" onClick={closeNavbar}>Projects</Link></li>
-                        <li><Link to="/contact" onClick={closeNavbar}>Contact</Link></li>
                     </ul>
                 </nav>
             </div>
